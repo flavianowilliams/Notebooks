@@ -1,0 +1,87 @@
+﻿\begin{tikzpicture}[scale=2,transform shape, font=\Large]
+
+	\tkzInit[xmin=-9,xmax=9,ymin=-9,ymax=9]
+%	\tkzGrid[color=gray!50]
+	\tkzClip[space=0.5]
+
+%	\tkzDrawX[label = x, right]
+%	\tkzDrawY[label = y, above]
+%	\tkzLabelX
+%	\tkzLabelY
+
+	\pgfmathparse{rand}\let\xa=\pgfmathresult,
+	\pgfmathparse{rand}\let\ya=\pgfmathresult,
+	\pgfmathparse{rand}\let\xb=\pgfmathresult,
+	\pgfmathparse{rand}\let\yb=\pgfmathresult,
+	\pgfmathparse{rand}\let\xc=\pgfmathresult,
+	\pgfmathparse{rand}\let\yc=\pgfmathresult,
+	\pgfmathparse{rand}\let\xd=\pgfmathresult,
+	\pgfmathparse{rand}\let\yd=\pgfmathresult,
+	\pgfmathparse{rand}\let\xe=\pgfmathresult,
+	\pgfmathparse{rand}\let\ye=\pgfmathresult,
+	\pgfmathparse{rand}\let\xf=\pgfmathresult,
+	\pgfmathparse{rand}\let\yf=\pgfmathresult,
+	\pgfmathparse{rand}\let\xg=\pgfmathresult,
+	\pgfmathparse{rand}\let\yg=\pgfmathresult,
+	\pgfmathparse{rand}\let\xh=\pgfmathresult,
+	\pgfmathparse{rand}\let\yh=\pgfmathresult,
+	\pgfmathparse{rand}\let\xi=\pgfmathresult,
+	\pgfmathparse{rand}\let\yi=\pgfmathresult,
+	\pgfmathparse{rand}\let\xj=\pgfmathresult,
+	\pgfmathparse{rand}\let\yj=\pgfmathresult,
+
+	\foreach \x in {-6, 0, 6}{
+		\foreach \y in {-6, 0, 6}{
+			\begin{scope}[shift={(\x,\y)}]
+				\tkzDefPoints{-3/-3/A, 3/-3/B, 3/3/C, -3/3/D}
+				\tkzDrawPolygon[line width=2pt, dashed](A, B, C, D)
+				\tkzDefPoint(3*\xa, 3*\ya){px}
+				\tkzDrawPoint[size = 0.5cm](px)
+				\tkzDefPoint(3*\xb, 3*\yb){px}
+				\tkzDrawPoint[size = 0.5cm](px)
+				\tkzDefPoint(3*\xc, 3*\yc){px}
+				\tkzDrawPoint[size = 0.5cm](px)
+				\tkzDefPoint(3*\xd, 3*\yd){px}
+				\tkzDrawPoint[size = 0.5cm](px)
+				\tkzDefPoint(3*\xe, 3*\ye){px}
+				\tkzDrawPoint[size = 0.5cm](px)
+				\tkzDefPoint(3*\xf, 3*\yf){px}
+				\tkzDrawPoint[size = 0.5cm](px)
+				\tkzDefPoint(3*\xg, 3*\yg){px}
+				\tkzDrawPoint[size = 0.5cm](px)
+				\tkzDefPoint(3*\xh, 3*\yh){px}
+				\tkzDrawPoint[size = 0.5cm](px)
+				\tkzDefPoint(3*\xi, 3*\yi){px}
+				\tkzDrawPoint[size = 0.5cm](px)
+				\tkzDefPoint(3*\xj, 3*\yj){px}
+				\tkzDrawPoint[size = 0.5cm](px)
+			\end{scope}
+		}
+	}
+
+	\begin{scope}[shift={(0,0)}]
+		\tkzDefPoints{-3/-3/A, 3/-3/B, 3/3/C, -3/3/D}
+		\tkzDrawPolygon[line width=2pt, dashed](A, B, C, D)
+		\tkzDefPoint(3*\xa, 3*\ya){px}
+		\tkzDrawPoint[size = 0.5cm, fill=red, color=red](px)
+		\tkzDefPoint(3*\xb, 3*\yb){px}
+		\tkzDrawPoint[size = 0.5cm, fill=red, color=red](px)
+		\tkzDefPoint(3*\xc, 3*\yc){px}
+		\tkzDrawPoint[size = 0.5cm, fill=red, color=red](px)
+		\tkzDefPoint(3*\xd, 3*\yd){px}
+		\tkzDrawPoint[size = 0.5cm, fill=red, color=red](px)
+		\tkzDefPoint(3*\xe, 3*\ye){px}
+		\tkzDrawPoint[size = 0.5cm, fill=red, color=red](px)
+		\tkzDefPoint(3*\xf, 3*\yf){px}
+		\tkzDrawPoint[size = 0.5cm, fill=red, color=red](px)
+		\tkzDefPoint(3*\xg, 3*\yg){px}
+		\tkzDrawPoint[size = 0.5cm, fill=red, color=red](px)
+		\tkzDefPoint(3*\xh, 3*\yh){px}
+		\tkzDrawPoint[size = 0.5cm, fill=red, color=red](px)
+		\tkzDefPoint(3*\xi, 3*\yi){px}
+		\tkzDrawPoint[size = 0.5cm, fill=red, color=red](px)
+		\tkzDefPoint(3*\xj, 3*\yj){px}
+		\tkzDrawPoint[size = 0.5cm, fill=red, color=red](px)
+	\end{scope}
+
+\end{tikzpicture}

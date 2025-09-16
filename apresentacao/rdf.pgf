@@ -1,0 +1,57 @@
+﻿\begin{tikzpicture}[scale=1,transform shape, font=\Large]
+
+	\tkzInit[xmin=-10,xmax=10,ymin=-10,ymax=10]
+%	\tkzGrid[color=gray!50]
+	\tkzClip[space=0.75]
+
+	\begin{scope}[shift={(0,0)}]
+
+		\tkzDefPoints{0/0/O}
+
+%		\tkzDrawX[label = x, right]
+%		\tkzDrawY[label = y, above]
+%		\tkzLabelX
+%		\tkzLabelY
+
+		\tkzDefPoints{9/1/s1,9/5/s2}
+
+		\def\ra{6}
+		\def\rb{7}
+		\def\rc{6.5}
+		\def\rd{3}
+
+		\tkzDefCircle[R](O, \rb)\tkzGetPoint{x}
+		\tkzDrawCircle[dashed, line width=2pt, fill=brown, opacity=0.5](O, x)
+		\tkzDefCircle[R](O, \ra)\tkzGetPoint{x}
+		\tkzDrawCircle[dashed, line width=2pt, fill=white](O, x)
+
+		\foreach \teta in {1, 2, ..., 5}{
+			\pgfmathparse{random(40)}\let\ang=\pgfmathresult,
+			\tkzDrawPoint[size=0.5cm, fill=red, color=red]({\rc*cos(\ang)}, {\rc*sin(\ang)})
+}
+
+		\foreach \teta in {1, 2, ..., 15}{
+			\pgfmathparse{random(50, 360)}\let\ang=\pgfmathresult,
+			\tkzDrawPoint[size=0.5cm, fill=red, color=red]({\rc*cos(\ang)}, {\rc*sin(\ang)})
+}
+
+		\foreach \teta in {1, 2, ..., 40}{
+			\pgfmathparse{rnd}\let\x=\pgfmathresult,
+			\pgfmathparse{rnd}\let\y=\pgfmathresult,
+			\pgfmathparse{random(360)}\let\ang=\pgfmathresult,
+			\tkzDrawPoint[size=0.5cm, fill=black, color=black]({(\x*\ra-0.5)*cos(\ang)}, {(\y*\ra-0.5)*sin(\ang)})
+}
+
+		\foreach \teta in {1, 2, ..., 40}{
+			\pgfmathparse{rnd}\let\x=\pgfmathresult,
+			\pgfmathparse{rnd}\let\y=\pgfmathresult,
+			\pgfmathparse{random(360)}\let\ang=\pgfmathresult,
+			\tkzDrawPoint[size=0.5cm, fill=black, color=black]({(\x*\rd+\rb+0.5)*cos(\ang)}, {(\y*\rd+\rb+0.5)*sin(\ang)})
+}
+
+		\draw[->, line width=2pt, color=blue] (O) -- ({\ra*cos(45)}, {\ra*sin(45)}) node [sloped, midway, above] {\huge $\vec{r}$};
+		\draw[<->, line width=2pt, color=blue] ({\ra*cos(45)}, {\ra*sin(45)}) -- ({\rb*cos(45)}, {\rb*sin(45)}) node [sloped, midway, above] {\huge dr};
+
+	\end{scope}
+
+\end{tikzpicture}
